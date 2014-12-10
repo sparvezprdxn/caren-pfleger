@@ -1,0 +1,1038 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* *HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+/*Disabling input rounded appearance in IOS*/
+textarea,
+input {
+     -webkit-appearance: none;
+     -webkit-border-radius: none;
+     border-radius: none;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+
+.cf { *zoom: 1; }
+
+/* 1.3. Font class declaration
+   ========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+/* WRAPPER CSS CODES
+   ========================================================================== */
+.wrapper {
+  width: 96.25%;
+  margin: 0 auto;
+}
+
+
+.content-wrapper { padding: 7% 0 0}
+
+/* CSS CODES RELATED TO LOGO
+   ========================================================================== */
+h1 {
+  margin: 25px auto;
+  display: inline-block;
+}
+
+.logo {
+  width: 235px;
+  height: 22px;
+  display: inline-block;
+  background: url('../images/logo.caren-pfleger.png');
+  text-indent: -99999px;
+}
+
+/* CSS CODES RELATED TO HEADER
+   ========================================================================== */
+
+header {
+  width: 100%;
+  border-top: 5px solid #000;
+  position: fixed;
+  z-index: 1;
+  background: url('../images/header-bg.png');
+}
+
+header .wrapper { padding: 10px 0 0 }
+
+ header ul li {
+  display: inline-block;
+  vertical-align: bottom;
+  list-style: none;
+ }
+
+ header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: arial;
+  font-size: 12px;
+ }
+
+ .head-icons {float: right;}
+
+ nav { 
+  margin: 32px 0 0 ;
+  clear: both;
+  }
+
+ nav ul li {
+  padding: 0 6px;
+  border-right: 1px solid #ccc;
+  line-height: 11px;
+ }
+
+ .content-nav .search-tab {
+  margin: 0 0 0 130px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 11px;
+  }
+
+  .search-tab li:last-child {
+    padding: 0 0 0 4px;
+    border-left: 1px solid #ccc;
+  }
+
+span.search-img {
+  width: 9px;
+  height: 11px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  background: url('../images/sprite1.png') no-repeat -18px 0;
+  text-indent: -99999px;
+}
+
+.content-nav div.search-link {
+  width: 100px;
+  padding: 1px 5px 0 0;
+  display: inline-block;
+  position: relative;
+}
+
+div.search-link input[type="text"] {
+  box-sizing: border-box;
+  padding: 0 20px 0 0;
+  border: none;
+  background: #6d6e71;
+  border-radius: none;
+/*  -webkit-appearance: none;*/
+}
+
+ li a:hover,
+ .content-nav nav ul li a:hover { color: #e60094 }
+
+ .active a { color: #e60094 }
+
+ a.home-pic.home-active {background: url('../images/sprite.png') no-repeat 0 -17px;}
+
+
+.content-nav {
+  float: right;
+}
+
+.content-nav nav ul {
+  width: 100%;
+  line-height: 9px;
+}
+
+.content-nav nav ul li a {
+  font-size: 12px;
+  font-family: arial;
+  font-weight: bold;
+}
+
+li.anchor-bg-img { padding: 0 2% }
+
+a.home-pic {
+  width: 16px;
+  height: 15px;
+  padding: 0;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat 0 0;
+  text-indent: -99999px;
+  vertical-align: top;
+  }
+
+a.home-pic:hover { background: url('../images/sprite.png') no-repeat 0 -17px }
+
+li:first-child,
+li:last-child { border: none }
+
+span img {
+  padding: 0px 5px;
+  vertical-align: initial;
+}
+ .social-icons { float: right }
+
+ .social-icons li a { padding: 0px 0px 0px 4px }
+
+ .facebook {
+  width: 15px;
+  height: 16px;
+  margin: 0 0 0 2px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat 0 -42px;
+  text-indent: -99999px;
+ }
+
+ .facebook:hover { background: url('../images/sprite.png') no-repeat 0 -61px }
+
+ .tweeter {
+  width: 17px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat -19px -42px;
+  text-indent: -9999px;
+ }
+
+.tweeter:hover { background: url('../images/sprite.png') no-repeat -19px -61px }
+
+ .pinterest {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat -40px -42px;
+  text-indent: -9999px;
+}
+
+.pinterest:hover { background: url('../images/sprite.png') no-repeat -40px -61px }
+
+ .instagram {
+  width: 15px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat -60px -42px;
+  text-indent: -9999px;
+}
+
+.instagram:hover { background: url('../images/sprite.png') no-repeat -60px -61px }
+
+ .tumblr {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat -79px -42px;
+  text-indent: -9999px;
+ }
+ .tumblr:hover { background: url('../images/sprite.png') no-repeat -79px -61px }
+
+ .youtube {
+  width: 17px;
+  height: 16px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat -98px -42px;
+  text-indent: -9999px;
+}
+
+.youtube:hover { background: url('../images/sprite.png') no-repeat -98px -61px }
+
+ul.small-nav {
+  display: none;
+  float: right;
+  }
+
+.search {
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat -44px -87px;
+  text-indent: -9999px;
+}
+
+footer nav {margin: 30px 0 0;}
+
+footer ul.social-icons.header-icons li {
+   padding: 0 0 0 4px;
+}
+
+/* CSS RELATED DISPLAY-IMG
+   ========================================================================== */
+.display-img {
+  width: 100%;
+  height: 100%;
+  height: auto;
+  position: relative;
+}
+
+.display-img .arrow-div {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+
+span.see-more {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../images/header-bg.png');
+  color: #e60094;
+  text-align: center;
+  font-size: 20px;
+}
+
+a:hover span.see-more { 
+  display: block;
+  padding: 72% 0 0;
+ }
+
+a.image-row.first-a,
+a.image-row.second-b,
+a.image-row.second-c,
+a.image-row.third-a { position: relative }
+
+a.image-row.third-a span.see-more {padding: 14% 0 0}
+
+a.image-row.first-a span {padding: 48% 0 0}
+
+a.first-b span.see-more { padding: 23% 0 0 }
+
+.left-arrow {
+  width: 29px;
+  height: 50px;
+  display: inline-block;
+  background: url('../images/sprite.png') no-repeat 0 -163px;
+  text-indent: -99999px;
+}
+
+.right-arrow {
+  width: 29px;
+  height: 50px;
+  display: inline-block;
+  float: right;
+  background: url('../images/sprite.png') no-repeat -31px -163px;
+  text-indent: -99999px;
+}
+
+.front-image { width: 100% }
+
+/* CSS RELATED TO SECTION
+   ========================================================================== */
+
+.section-wrapper {
+  width: 75%;
+  padding: 3% 0;
+  margin: 0 auto;
+}
+
+.section-wrapper article { margin: 0 auto }
+
+
+.image-row { display: inline-block }
+
+.first-a, 
+.second-a, 
+.second-b, 
+.second-c { width: 32% }
+
+.first-b {
+  width: 65.8%;
+  float: right;
+  position: relative;
+}
+
+.image-row > img {width: 100%}
+
+.section-wrapper article + article { margin: 2% auto }
+
+.second-b { margin: 0% 0% 0% 2% }
+
+.second-c { float: right }
+
+.third-a { width: 100% }
+
+/*   CSS RELATED TO FOOTER
+   ========================================================================== */
+footer {
+  width: 100%;
+  padding: 25px 0px;
+  background: #000;
+}
+
+footer ul li {
+  float: left;
+  list-style: none;
+}
+
+.footer-icons {
+  margin: 18px auto 18px auto;
+  float: right;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  text-indent: -9999px;
+}
+footer p {
+  margin: 3% 0 0;
+  float: left;
+  color: #fff;
+}
+
+
+/* ==========================================================================
+    CONTACT US PAGE
+   ========================================================================== */
+
+.contact-us,
+.stockist {
+  padding: 37px 0px 0px;
+  margin: 0 37px;
+}
+
+.banner img { width: 100%; }
+
+.shadow {
+  height: 8px;
+  margin: 0px 0px 10px;
+  background: url('../images/sprite.png') no-repeat -29px -7px;
+  background-size: cover;
+}
+
+.map-img {
+  width: 94%;
+  margin: 0 auto;
+}
+
+.map-img img { width: 100% }
+
+.lower-content {
+  padding: 0 3%;
+  margin: 0 0 5%;
+}
+
+  h4 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: arial;
+}
+
+   form {
+    width: 28%;
+    margin: 2.5% 0 0 0;
+    float: left;
+   }
+
+   form {width: 37%;}
+
+   input,
+   textarea {width: 100%}
+
+   .contact-form input[type="text"] {
+    box-sizing: border-box;
+    height: 23px;
+    padding: 0 0 0 70px;
+    /*-webkit-appearance: none;*/
+    border-radius: 0;
+   }
+
+   textarea {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 3px 0 0 70px;
+    }
+
+   .contact-form {margin: 10px 0}
+
+   h2,
+   h4 { text-align: center;}
+
+  label#label-regulator {
+    padding: 3px;
+    position: absolute;
+  }
+
+.customer-inquiries {
+  width: 59%;
+  padding: 1%;
+  display: inline-block;
+  float: right;
+}
+
+.customer-inquiries h4 { 
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.left-content {
+  width: 50%;
+  float: left;
+}
+
+.ecommerce { padding: 10px 0px }
+
+.email-related { padding: 5px 0px }
+
+.mail-related { padding: 5px 0px }
+
+.right-content {
+  width: 45%;
+  float: right;
+}
+
+.other-inquiries { padding: 5px 0px }
+
+.address { padding: 15px 0px }
+
+p span,
+p span a { 
+  display: block;
+  color: #7e7e7e;
+ }
+
+ p span a { text-decoration: none }
+
+ p span a:hover {
+  text-decoration: underline;
+  color: #ca2a8b;
+ }
+
+form a.send {
+  box-sizing: border-box;
+  width: 181px;
+  padding: 5px;
+  display: block;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+
+a.send:hover {
+  background: #ca2a8b;
+  color: #000;
+}
+
+/* ==========================================================================
+    STOCKIST PAGE
+   ========================================================================== */
+
+   .columns {
+    width: 32%;
+    border: 1px solid #fff;
+    border-right-color: #ccc;
+    display: inline-block;
+   }
+
+   .content { 
+    padding: 0px 0px 0px 3%;
+    margin: 36px 0 40px;
+     }
+
+   .content address {
+    box-sizing: border-box;
+    padding: 0 5% 1%;
+    width: 32%;
+    display: inline-block;
+    color: #5c5d5f;
+    border-right: 1px solid #ccc;
+     }
+
+   #content-header {
+    margin: 0px 0px 19px 0px;
+    display: block;
+    font-weight: bold;
+     }
+
+   span#content-header.content-head { margin-top: 32px }
+
+    address.content-no-border { border: none }
+
+    address span {display: block }
+
+   .stockist-bottom-bars { margin: 45px 0px 0px 0px }
+
+   .stockist-top-bars { margin: 0px 0px 45px 0px }
+
+/* ==========================================================================
+    PRESS PAGE
+   ========================================================================== */
+  .no-border { border: none }
+
+  .stockist,
+  .press,
+  .studio {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .press { padding: 37px 0px 0px }
+
+  .press-content-holder { margin: 0 0 15% 0  }
+
+  .column-content { 
+    padding: 19px 0px 0px;
+    position: relative;
+   }
+
+  .press-title { 
+    margin: 35px 0px 18px 0px;
+    border-bottom: 1px solid #ccc;
+    }
+
+  .press-title h3 {  margin: 0px 0px 8px 0px  }
+
+  .columns img {  width: 100% }
+
+  .column-content p { 
+    width: 48%;
+    display: inline-block;
+   }
+
+  .column-1 { margin: 0 }
+
+  .column-2 { margin: 0 0 0 1.7% }
+
+  .column-3 {
+    margin: 0;
+    float: right;
+  }
+
+  a.read-more {
+    margin: 12px 0px 0px 0px;
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none
+    }
+
+  a.read-more:hover {
+    color: #ca2a8b;
+    text-decoration: underline;
+    }
+
+  a.download-tab {
+    padding: 6px;
+    float: right;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    text-decoration: none;
+   }
+
+/* ==========================================================================
+    STUDIO PAGE
+   ========================================================================== */
+    .studio { padding: 37px 0px 0px }
+    
+    .studio-content { margin: 60px 0px 100px 0px }
+
+    .studio-content p { 
+      margin: 25px 0px 0px;
+      text-align: center 
+    }
+
+    .left-studio-content,
+    .right-studio-content  { width: 48% }
+
+    .left-studio-content { float: left }
+
+    .right-studio-content { float: right }
+
+    .studio-header {
+        font-size: 24px;
+        font-style: italic;
+        font-family: arial;
+        text-align: center;
+    }
+
+    .sub-header {
+        font-size: 14px;
+        font-style: normal;
+        font-family: arial;
+        text-align: center;
+    }
+
+
+/* ==========================================================================
+    CARE PAGE
+   ========================================================================== */
+   .care-content { 
+    width: 100%;
+    margin: 6% 0;
+    }
+
+   .care-text { 
+    width: 31.75%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .care-display-img {
+    width: 64.23%;
+    float: right;
+    vertical-align: top;
+  }
+
+  .care-main { width: 100%; }
+
+  .care-sub1 {
+    width: 48.9%;
+    margin: 4% 0 0;
+  }
+
+  .care-sub2 {
+    width: 47.9%;
+    margin: 4% 0 0;
+    float: right;
+  }
+
+
+/* ==========================================================================
+   RESPONSIVE CSS CODES FOR MAX-WIDTH:767PX
+   ========================================================================== */
+
+@media screen and (max-width: 767px) {
+
+  header ul li {display: none}
+
+  div.search-link input[type="text"],
+  div.search-link span {display: none}
+
+  .content-nav div.search-link {
+    width: 21px;
+    height: 21px;
+    background: url('../images/sprite.png') no-repeat -44px -87px;
+  }
+
+  .content-nav div.search-link:hover { background: url('../images/sprite.png') no-repeat -44px -132px }
+
+  .content-nav .search-tab {display: block}
+
+  ul.social-icons li {display: none}
+
+  ul.social-icons {
+  width: 20px;
+  height: 20px;
+  margin: 0 20px 0 85px;
+  float: left;
+  background: url('../images/sprite.png') no-repeat 0 -87px;
+  }
+
+  ul.social-icons:hover { background: url('../images/sprite.png') no-repeat 0 -132px }
+
+  nav:hover ul li {
+    padding: 12px 0 12px 10px;
+    display: block;
+  }
+
+  .content-nav {margin: 27px 0 0}
+
+  .content-nav nav {
+    width: 19px;
+    height: 17px;
+    margin: 0 0 14px 10px;
+    float: right;
+    background: url('../images/sprite.png') no-repeat -89px -87px;
+  }
+
+  .content-nav nav ul {
+    margin: 21px 0 0;
+    position: absolute;
+    left: 0;
+    background: #000;
+  }
+
+  .head-icons {
+    display: inline-block;
+    float: none;
+  }
+  nav:hover { 
+    background: url('../images/sprite.png') no-repeat -89px -132px;
+    cursor: pointer;
+   }
+
+  .shadow { background-size: initial}
+  
+  footer ul.social-icons,
+  footer .content-nav {display: none}
+
+  footer p {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+    
+/* INDEX(HOME)-RESPONSIVE
+   ========================================================================== */
+  article a img { width: 100% }
+
+  a.image-row { width: 100% }
+
+  a.image-row.first-b {
+    margin: 4% 0;
+    float: none;
+  }
+  
+  a.image-row.second-b {margin: 4% 0}
+
+  a.image-row.second-c {float: none}
+
+  a.image-row.third-a,
+  a:hover span.see-more {display: none}
+
+  a.second-b span.see-more,
+  a.second-c span.see-more { padding: 72% 0 0 }
+
+  .banner {padding: 35% 0 0}
+
+/* STOCKIST-RESPONSIVE
+   ========================================================================== */
+  .content address {
+    width: 100%;
+    text-align: center;
+    border: none;
+  }
+
+  .stockist.banner {padding: 62px 0 0 25px}
+
+/* PRESS-RESPONSIVE
+   ========================================================================== */
+    .columns {width: 100%}
+    
+    .column-content {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .column-content p {
+      width: 100%;
+      margin: 0 0 4% 0;
+      text-align: center;
+    }
+
+    .column-content p span {font-weight: bolder}
+
+    .read-more {display: none}
+
+    .columns.column-2 {margin: 4% 0}
+
+    .columns.column-3 {margin: 0 0 7% 0}
+
+    a.download-tab {
+      width: 150px;
+      margin: 0 auto;
+      display: block;
+      float: none;
+      vertical-align: top;
+      text-align: center;
+    }
+
+/* CONTACT-US-RESPONSIVE
+   ========================================================================== */
+
+   form,
+   input,
+   textarea {width: 100%}
+
+   input[type="text"] {
+    box-sizing: border-box;
+    height: 23px;
+    padding: 0 0 0 70px;
+    border-radius: 0;
+    /*-webkit-appearance: none;*/
+   }
+
+   textarea {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 3px 0 0 70px;
+    }
+
+   .contact-form {margin: 10px 0}
+
+   form a.send {margin: 0 auto}
+
+   h2,
+   h4 { text-align: center;}
+
+   .customer-inquiries {
+    width: 100%;
+    margin: 25px 0 0;
+    float: none;
+  }
+
+  .customer-inquiries h2 {
+    padding: 10px 0px 10px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    }
+
+  .customer-details {
+    width: 100%;
+    text-align: center;
+  }
+
+/* STUDIO-RESPONSIVE
+   ========================================================================== */
+
+   .left-studio-content,
+   .right-studio-content {
+    width: 100%;
+    float: none;
+   }
+
+   .left-studio-content {margin: 0 0 25px 0}
+
+/* STUDIO-RESPONSIVE
+   ========================================================================== */
+
+  .care-text {width: 100%}
+
+  .care-display-img {
+    width: 100%;
+    margin: 25px 0 0;
+    float: none;
+  }
+}
